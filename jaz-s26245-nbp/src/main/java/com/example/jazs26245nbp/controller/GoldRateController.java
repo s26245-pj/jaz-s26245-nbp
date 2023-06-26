@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDate;
 
 @RestController
-@RequestMapping("/CurrencyRate")
+@RequestMapping("/goldRate")
 @Tag(name = "Gold Controller", description = "API endpoints for Gold Rate")
 public class GoldRateController {
 
@@ -24,11 +24,10 @@ public class GoldRateController {
         this.goldRateService = goldRateService;
     }
 
-    @GetMapping("/{code}/{startDate},{endDate}")
+    @GetMapping("/{startDate},{endDate}")
     @Operation(summary = "Get Currency Rate Information")
-    public ResponseEntity<GoldRate> getGoldRateInfo (@PathVariable("code") String code,
-                                                     @PathVariable("startDate") LocalDate startDate,
+    public ResponseEntity<GoldRate> getGoldRateInfo (@PathVariable("startDate") LocalDate startDate,
                                                      @PathVariable("endDate")LocalDate endDate) {
-        return ResponseEntity.ok(goldRateService.getGoldRateInfo(code, startDate, endDate));
+        return ResponseEntity.ok(goldRateService.getGoldRateInfo(startDate, endDate));
     }
 }

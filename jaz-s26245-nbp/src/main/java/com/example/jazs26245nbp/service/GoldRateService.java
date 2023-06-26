@@ -28,9 +28,10 @@ public class GoldRateService {
     }
 
 
-    public GoldRate getGoldRateInfo(String code, LocalDate startDate, LocalDate endDate) {
+    public GoldRate getGoldRateInfo(LocalDate startDate, LocalDate endDate) {
         NbpResponse nbpApiResponse = restTemplate.getForObject(NBP_API_URL + startDate + "/" + endDate,
                 NbpResponse.class);
+
 
         Double averageRate = calculateRate(nbpApiResponse.getRates());
         GoldRate goldRate = new GoldRate();
@@ -51,7 +52,7 @@ public class GoldRateService {
         }
         double sum = 0.0;
         for (NbpResponse.Rate rate : rates) {
-            sum += rate.getMid();
+            sum += rate.getCena();
         }
         return sum / rates.size();
     }
