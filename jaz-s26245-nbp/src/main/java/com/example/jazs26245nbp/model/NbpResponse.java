@@ -8,6 +8,7 @@ import java.util.List;
 
 @Data
 public class NbpResponse {
+
     private List<Rate> rates;
 
     @Data

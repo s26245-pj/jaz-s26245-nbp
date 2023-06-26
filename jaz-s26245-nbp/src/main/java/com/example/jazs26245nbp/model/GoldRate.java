@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 public class GoldRate {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Schema(description = "ID of the gold rate")

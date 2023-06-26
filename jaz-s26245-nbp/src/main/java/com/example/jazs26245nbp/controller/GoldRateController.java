@@ -25,7 +25,7 @@ public class GoldRateController {
     }
 
     @GetMapping("/{startDate},{endDate}")
-    @Operation(summary = "Get Currency Rate Information")
+    @Operation(summary = "Get Gold Rate Information")
     public ResponseEntity<GoldRate> getGoldRateInfo (@PathVariable("startDate") LocalDate startDate,
                                                      @PathVariable("endDate")LocalDate endDate) {
         return ResponseEntity.ok(goldRateService.getGoldRateInfo(startDate, endDate));
