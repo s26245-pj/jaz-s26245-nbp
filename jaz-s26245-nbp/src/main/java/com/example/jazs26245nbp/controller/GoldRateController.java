@@ -4,6 +4,7 @@ package com.example.jazs26245nbp.controller;
 import com.example.jazs26245nbp.model.GoldRate;
 import com.example.jazs26245nbp.service.GoldRateService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/CurrencyRate")
+@Tag(name = "Gold Controller", description = "API endpoints for Gold Rate")
 public class GoldRateController {
 
     private final GoldRateService goldRateService;

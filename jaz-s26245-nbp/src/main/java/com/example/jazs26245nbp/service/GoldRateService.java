@@ -4,6 +4,7 @@ import com.example.jazs26245nbp.enums.Currency;
 import com.example.jazs26245nbp.model.GoldRate;
 import com.example.jazs26245nbp.model.NbpResponse;
 import com.example.jazs26245nbp.repository.GoldRateRepository;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,6 +14,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
+@Tag(name = "Gold Service", description = "Service for GoldRate")
 public class GoldRateService {
 
     private final String NBP_API_URL = "http://api.nbp.pl/api/cenyzlota/";
